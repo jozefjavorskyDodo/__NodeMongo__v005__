@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dodo : jozef.javorsky.strom44zem88@gmail.com" />
+    <meta name="description" content="Node.js and MongoDB tryout." />
+    <link rel="icon" type="image/x-icon" sizes="16x16"
+        href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVDhPvYxRDsAgDEJ7bs+9A6xJCbMVY+PHXvgQCtol4xl4bUgFN01h4CSjqIXw8Q1vs2UI5pQ3GQKmIYa0DEH1C3ogZ/r040CKhY/qF1IhvukIAycZxbGwwewFg9icUZ82eVoAAAAASUVORK5CYII=" />
+    <title>eLibrary v0.05</title>
+    <style>
+        #html-body {
+            background-color: rgb(122, 122, 122);
+            user-select: none;
+        }
+
+        #header-h2 {
+            display: inline-block;
+            margin: 1mm 0 1mm 1mm;
+            border: 1mm solid rgba(0, 0, 0, 1);
+            border-radius: 3mm;
+            padding: 0 3mm 2mm 3mm;
+            box-shadow: -3mm -3mm 15mm 15mm;
+            font-family: cursive;
+        }
+
+        #form-bttn {
+            padding: 1mm 3mm 1mm 3mm;
+            border: 0;
+            border-radius: 3mm;
+            margin-top: 2cm;
+            margin-left: 2cm;
+            font-family: cursive;
+            font-weight: 900;
+            font-size: 4mm;
+            background-color: rgb(0, 0, 0);
+            color: rgb(122, 244, 122, 1);
+        }
+    </style>
+</head>
+
+<body id="html-body">
+
+    <header>
+        <h2 id="header-h2">eLibrary v0.05</h2>
+    </header>
+
+    <main>
+        <nav>
+            <form action="http://localhost:5500" method="post">
+                <input type="text" name="initialized" value="true" hidden="hidden" />
+                <button type="submit" id="form-bttn">initialize books<br />collection of database</button>
+            </form>
+        </nav>
+    </main>
+
+    <script>
+        "use strict";
+        try {
+            document.querySelector("#form-bttn").addEventListener("mouseenter", (ev) => {
+                ev.target.style.cursor = "pointer";
+                ev.target.style.backgroundColor = "rgb(122, 244, 122)";
+                ev.target.style.color = "rgba(0, 0, 0, 1)";
+            });
+            document.querySelector("#form-bttn").addEventListener("mouseleave", (ev) => {
+                ev.target.style.backgroundColor = "rgb(0, 0, 0)";
+                ev.target.style.color = "rgba(122, 244, 122, 1)";
+            });
+        } catch (err) {
+            if (err) console.log(err);
+        };
+    </script>
+
+</body>
+
+</html>

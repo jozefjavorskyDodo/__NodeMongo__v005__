@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dodo : jozef.javorsky.strom44zem88@gmail.com" />
+    <meta name="description" content="Node.js and MongoDB tryout." />
+    <link rel="icon" type="image/x-icon" sizes="16x16"
+        href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVDhPvYxRDsAgDEJ7bs+9A6xJCbMVY+PHXvgQCtol4xl4bUgFN01h4CSjqIXw8Q1vs2UI5pQ3GQKmIYa0DEH1C3ogZ/r040CKhY/qF1IhvukIAycZxbGwwewFg9icUZ82eVoAAAAASUVORK5CYII=" />
+    <title>eLibrary v0.05</title>
+    <style>
+        #html-body {
+            background-color: rgb(122, 122, 122);
+            user-select: none;
+        }
+
+        #header-h2 {
+            display: inline-block;
+            margin: 1mm 0 1mm 1mm;
+            border: 1mm solid rgba(0, 0, 0, 1);
+            border-radius: 3mm;
+            padding: 0 3mm 2mm 3mm;
+            box-shadow: -3mm -3mm 15mm 15mm;
+            font-family: cursive;
+        }
+
+        #main-nav {
+            margin-top: 2cm;
+            margin-left: 2cm;
+            padding: 1mm;
+            border: 0;
+            text-align: center;
+            border-radius: 3mm;
+            display: inline-block;
+            background-color: rgb(0, 0, 0);
+            padding: 2mm 5mm 4mm 5mm;
+        }
+
+        .formBttn {
+            font-family: cursive;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 1);
+            background-color: rgb(122, 122, 122);
+            font-size: 4mm;
+            padding: 1mm 3mm 2mm 3mm;
+            margin: 2mm 0 2mm 0;
+            border: 0;
+            border-radius: 3mm;
+        }
+    </style>
+</head>
+
+<body id="html-body">
+
+    <header>
+        <h2 id="header-h2">eLibrary v0.05</h2>
+    </header>
+
+    <main>
+        <nav id="main-nav">
+            <form action="http://localhost:5500" method="post">
+                <input type="text" name="operation" value="create" hidden="hidden" />
+                <button type="submit" class="formBttn">add a book</button>
+            </form>
+            <form action="http://localhost:5500" method="post">
+                <input type="text" name="operation" value="read" hidden="hidden" />
+                <button type="submit" class="formBttn">details of the book</button>
+            </form>
+            <form action="http://localhost:5500" method="post">
+                <input type="text" name="operation" value="update" hidden="hidden" />
+                <button type="submit" class="formBttn">edit details</button>
+            </form>
+            <form action="http://localhost:5500" method="post">
+                <input type="text" name="operation" value="delete" hidden="hidden" />
+                <button type="submit" class="formBttn">remove the book</button>
+            </form>
+        </nav>
+    </main>
+
+    <script>
+        "use strict";
+        try {
+            let node_bttns = document.querySelectorAll(".formBttn");
+            node_bttns.forEach(__b => {
+                __b.addEventListener("mouseenter", (ev) => {
+                    ev.target.style.cursor = "pointer";
+                    ev.target.parentElement.parentElement.style.backgroundColor = "rgb(122, 244, 122)";
+                });
+                __b.addEventListener("mouseleave", (ev) => {
+                    ev.target.parentElement.parentElement.style.backgroundColor = "rgb(0, 0, 0)";
+                });
+            });
+        } catch (err) {
+            if (err) console.log(err);
+        };
+    </script>
+
+</body>
+
+</html>
